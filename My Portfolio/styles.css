@@ -458,6 +458,7 @@ button, input, textarea {
 .hero-title .highlight {
   background: linear-gradient(135deg, var(--text-primary) 30%, var(--highlight) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -1063,18 +1064,19 @@ button, input, textarea {
    Contact Section & Interactive Form
    ========================================================================== */
 
-.contact-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(1.25rem, 3vw, 2rem);
+.contact-wrapper {
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
-.contact-details-card,
-.contact-form-card {
+.contact-details-card {
   background-color: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   padding: clamp(1.25rem, 3.5vw, 2.25rem);
+  box-shadow: var(--shadow-sm);
 }
 
 .contact-card-title {
@@ -1356,10 +1358,6 @@ button, input, textarea {
   .extra-grid {
     grid-template-columns: 1fr;
   }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* Small Devices (Tablets in portrait & large phones: <= 768px) */
@@ -1472,8 +1470,7 @@ button, input, textarea {
     gap: 0.35rem;
   }
 
-  .contact-details-card,
-  .contact-form-card {
+  .contact-details-card {
     padding: 1.35rem 1.15rem;
   }
 

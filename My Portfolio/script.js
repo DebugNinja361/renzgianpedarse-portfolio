@@ -102,33 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 4. Print Resume Button
-  const printBtn = document.getElementById('print-resume-btn');
-  if (printBtn) {
-    printBtn.addEventListener('click', () => {
-      window.print();
-    });
-  }
-
-  // 5. Contact Form Handler (Generates mailto directly)
-  const contactForm = document.getElementById('contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('sender-name').value.trim();
-      const subject = document.getElementById('sender-subject').value.trim();
-      const message = document.getElementById('sender-message').value.trim();
-
-      const recipient = 'renzgianpedarse@gmail.com';
-      const mailtoSubject = encodeURIComponent(`[Portfolio Inquiry] ${subject} - from ${name}`);
-      const mailtoBody = encodeURIComponent(`Hi Renz,\n\n${message}\n\nBest regards,\n${name}`);
-
-      window.location.href = `mailto:${recipient}?subject=${mailtoSubject}&body=${mailtoBody}`;
-      showToast('Opening your email client...');
-    });
-  }
-
-  // 6. Mobile Navigation Menu Toggle
+  // 4. Mobile Navigation Menu Toggle
   const mobileToggle = document.getElementById('mobile-toggle');
   const siteNav = document.querySelector('.site-nav');
 
